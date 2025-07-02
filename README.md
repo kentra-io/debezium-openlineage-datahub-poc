@@ -21,9 +21,9 @@ This is the expected graph:
 Currently published version isnt't easy to run. When building it, I've found 3 bugs and this repo contains fixes, that
 aren't released yet. Here are the bugs:
 
-https://github.com/datahub-project/datahub/issues/13854
-https://github.com/datahub-project/datahub/issues/13874
-https://issues.redhat.com/browse/DBZ-9192
+- https://github.com/datahub-project/datahub/issues/13854
+- https://github.com/datahub-project/datahub/issues/13874
+- https://issues.redhat.com/browse/DBZ-9192
 
 The Debezium fix is already merged to main, so I'm using `nightly` docker image. It's not stable, but the fix is there.
 
