@@ -22,7 +22,7 @@ class JavaDbProducerApplicationTests {
 
     @Test
     void createAndReadProduct() throws InterruptedException {
-        Product product = new Product(null, "Test Product", 123);
+        Product product = new Product(null, "Test Product", 123, null);
         Product saved = productRepository.save(product);
 
         assertThat(saved.id()).isNotNull();

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 @Component
 public class RandomProductInserter {
+    public static final int INSERT_FREQUENCY = 2000;
     private final ProductRepository productRepository;
     private final Random random = new Random();
 
@@ -26,6 +27,6 @@ public class RandomProductInserter {
                     null
             );
             productRepository.save(product);
-        }, 0, 2000, TimeUnit.MILLISECONDS);
+        }, 0, INSERT_FREQUENCY, TimeUnit.MILLISECONDS);
     }
 }

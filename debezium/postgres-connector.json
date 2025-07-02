@@ -11,6 +11,16 @@
     "plugin.name": "pgoutput",
     "slot.name": "debezium",
     "table.include.list": "public.product",
-    "topic.prefix": "debezium"
+    "topic.prefix": "debezium",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "openlineage.integration.enabled": "true",
+    "openlineage.integration.config.file.path": "/debezium/openlineage.yml",
+    "openlineage.integration.job.namespace": "dbz-jobs",
+    "openlineage.integration.job.description": "This job captures changes in the product table and publishes events to debezium.public.product Kafka topic.",
+    "openlineage.integration.job.tags": "env=test",
+    "openlineage.integration.job.owners": "Data Team=Jan Doe",
+    "transforms": "openlineage",
+    "transforms.openlineage.type": "io.debezium.transforms.openlineage.OpenLineage",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:9094"
   }
 }
