@@ -1,4 +1,4 @@
 transport:
-  type: console
-#  type: http # Switch to HTTP transport after ingesting metadata in DataHub
+#  type: console
+  type: http # Switch to HTTP transport after ingesting metadata in DataHub
   url: http://request-logger-proxy:80/openapi/openlineage/api/v1/lineage

@@ -67,7 +67,7 @@ services:
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9094
       DYNAMIC_CONFIG_ENABLED: 'true'
   debezium:
-    image: quay.io/debezium/connect:nightly
+    image: quay.io/debezium/connect:3.2.0.Final
     container_name: debezium
     ports:
       - "8083:8083"
@@ -89,7 +89,23 @@ services:
     volumes:
       - debezium_data:/kafka/connect
       - ./debezium/openlineage.yml:/debezium/openlineage.yml
-      - ./debezium/jars/openlineage-java-1.31.0-all-deps.jar:/kafka/connect/debezium-connector-postgres/openlineage-java-1.31.0-all-deps.jar
+      - ./debezium/jars/commons-lang3-3.17.0.jar:/kafka/connect/debezium-connector-postgres/commons-lang3-3.17.0.jar
+      - ./debezium/jars/commons-logging-1.3.5.jar:/kafka/connect/debezium-connector-postgres/commons-logging-1.3.5.jar
+      - ./debezium/jars/debezium-openlineage-core-3.2.0.Final.jar:/kafka/connect/debezium-connector-postgres/debezium-openlineage-core-3.2.0.Final.jar
+      - ./debezium/jars/HdrHistogram-2.2.2.jar:/kafka/connect/debezium-connector-postgres/HdrHistogram-2.2.2.jar
+      - ./debezium/jars/httpclient5-5.4.3.jar:/kafka/connect/debezium-connector-postgres/httpclient5-5.4.3.jar
+      - ./debezium/jars/httpcore5-5.3.4.jar:/kafka/connect/debezium-connector-postgres/httpcore5-5.3.4.jar
+      - ./debezium/jars/httpcore5-h2-5.3.4.jar:/kafka/connect/debezium-connector-postgres/httpcore5-h2-5.3.4.jar
+      - ./debezium/jars/jackson-dataformat-yaml-2.16.2.jar:/kafka/connect/debezium-connector-postgres/jackson-dataformat-yaml-2.16.2.jar
+      - ./debezium/jars/jackson-datatype-jdk8-2.15.3.jar:/kafka/connect/debezium-connector-postgres/jackson-datatype-jdk8-2.15.3.jar
+      - ./debezium/jars/jackson-datatype-jsr310-2.16.2.jar:/kafka/connect/debezium-connector-postgres/jackson-datatype-jsr310-2.16.2.jar
+      - ./debezium/jars/LatencyUtils-2.0.3.jar:/kafka/connect/debezium-connector-postgres/LatencyUtils-2.0.3.jar
+      - ./debezium/jars/micrometer-commons-1.14.5.jar:/kafka/connect/debezium-connector-postgres/micrometer-commons-1.14.5.jar
+      - ./debezium/jars/micrometer-core-1.14.5.jar:/kafka/connect/debezium-connector-postgres/micrometer-core-1.14.5.jar
+      - ./debezium/jars/micrometer-observation-1.14.5.jar:/kafka/connect/debezium-connector-postgres/micrometer-observation-1.14.5.jar
+      - ./debezium/jars/openlineage-java-1.31.0.jar:/kafka/connect/debezium-connector-postgres/openlineage-java-1.31.0.jar
+      - ./debezium/jars/slf4j-api-1.7.36.jar:/kafka/connect/debezium-connector-postgres/slf4j-api-1.7.36.jar
+      - ./debezium/jars/snakeyaml-2.2.jar:/kafka/connect/debezium-connector-postgres/snakeyaml-2.2.jar
 
   #### DataHub Services
   schema-registry: # not used for Kafka

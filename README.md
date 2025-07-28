@@ -25,19 +25,12 @@ aren't released yet. Here are the bugs:
 - https://github.com/datahub-project/datahub/issues/13874
 - https://issues.redhat.com/browse/DBZ-9192
 
-The Debezium fix is already merged to main, so I'm using `nightly` docker image. It's not stable, but the fix is there.
-
 Datahub is built from the following PR that isn't merged yet:
 
 https://github.com/datahub-project/datahub/pull/13347/files
 
 So in order to run it, you'll need to have a docker image that contains changes in this pr. I've built it locally with
 the tag `debug`. I'll update this repo once the fix is released.
-
-Another hurdle is the build process of the openlineage-java library. I've built the jar locally with some custom tweaks
-, but here's the debezium documentation that describes a different approach:
-
-https://github.com/debezium/debezium/pull/6502/files
 
 ### Okay, but what steps do I need to take once I have the images?
 #### Prerequisites:
